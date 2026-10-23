@@ -204,8 +204,8 @@ button:focus-visible { outline: 2px solid var(--petal); outline-offset: 4px; }
 <script>
 (function () {
   var TOPIC = 'https://ntfy.sh/trandafir-maria-909a3c1c91cf';
-  // Deschisă local (din folder, nu de pe site) nu trimite nimic.
-  var isTest = /[?&]test\b/.test(location.search) || location.protocol === 'file:';
+  // Trimite doar de pe site (http/https). Deschisă local, din folder sau din panoul aplicației (file:, data:), nu trimite nimic.
+  var isTest = /[?&]test\b/.test(location.search) || !/^https?:$/.test(location.protocol);
   var ua = navigator.userAgent || '';
   var isBot = navigator.webdriver === true ||
     /\bbot\b|bot[\/\-;]|crawl|spider|slurp|headless|lighthouse|facebookexternalhit|phantom|puppeteer|playwright|selenium/i.test(ua) ||
