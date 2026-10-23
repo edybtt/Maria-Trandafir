@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Maria Trandafir</title>
-<meta property="og:title" content="Maria Trandafir">
+<title>Un Trandafir</title>
+<meta property="og:title" content="Un Trandafir">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Caveat:wght@500;600&display=swap">
@@ -204,7 +204,8 @@ button:focus-visible { outline: 2px solid var(--petal); outline-offset: 4px; }
 <script>
 (function () {
   var TOPIC = 'https://ntfy.sh/trandafir-maria-909a3c1c91cf';
-  var isTest = /[?&]test\b/.test(location.search);
+  // Deschisă local (din folder, nu de pe site) nu trimite nimic.
+  var isTest = /[?&]test\b/.test(location.search) || location.protocol === 'file:';
   var ua = navigator.userAgent || '';
   var isBot = navigator.webdriver === true ||
     /\bbot\b|bot[\/\-;]|crawl|spider|slurp|headless|lighthouse|facebookexternalhit|phantom|puppeteer|playwright|selenium/i.test(ua) ||
